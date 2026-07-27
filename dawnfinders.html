@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dawnfinders | Détails Techniques</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="brand">
+        <h1><a href="index.html">DUP_DEV</a></h1>
+        <p>Page Projet / Focus Technique</p>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">← Retour à l'accueil</a>
+    </nav>
+</header>
+
+<main>
+    <section class="detail-hero">
+        <h1>The Dawnfinders</h1>
+        <div class="tags">
+            <span class="tag tag-ue5">Unreal Engine 5</span>
+            <span class="tag tag-cpp">C++</span>
+            <span class="tag tag-network">RPC & Replication</span>
+            <span class="tag tag-tools">Slate UI</span>
+            <span class="tag tag-tools">C# WPF</span>
+        </div>
+        <p style="color: var(--text-muted); margin-top: 15px;">
+            <strong>Rôle :</strong> Lead Programmer / Gameplay & Network Developer<br>
+            Dungeon Crawler d'extraction PvE coopératif. Voici le détail des systèmes clés que j'ai conçus et développés pour ce projet.
+        </p>
+    </section>
+
+    <h2 class="section-title">Architecture & Fonctionnalités Clés</h2>
+
+    <div class="tech-grid">
+
+        <!-- BLOC 1 -->
+        <article class="tech-card">
+            <h3>1. Architecture Réseau & Steam Subsystem</h3>
+            <img src="assets/dawnfinders-network.png" alt="Session Multijoueurs">
+            <ul>
+                <li>Ré-implémentation du plugin <em>Advanced Sessions</em> via un <strong>GameInstanceSubsystem C++</strong> dédié pour une gestion modulaire.</li>
+                <li>Système complet d'invitation et de création de parties via l'API Steam.</li>
+                <li>Mise en place de la structure RPC de base pour la réplication des états.</li>
+            </ul>
+        </article>
+
+        <!-- BLOC 2 -->
+        <article class="tech-card">
+            <h3>2. Système d'Interaction Modulaire</h3>
+            <img src="assets/dawnfinders-network.png" alt="Système d'interaction">
+            <ul>
+                <li>Conception d'une classe parente d'interaction générique et répliquée.</li>
+                <li>Gestion uniforme pour les éléments du décor (leviers, interrupteurs, palanquin) et entités alliées.</li>
+                <li>Architecture entièrement découplée garantissant l'exécution synchronisée client/serveur.</li>
+            </ul>
+        </article>
+
+        <!-- BLOC 3 -->
+        <article class="tech-card">
+            <h3>3. Physique Custom (Palanquin)</h3>
+            <img src="assets/dawnfinders-network.png" alt="Palanquin Physique">
+            <ul>
+                <li>Développement d'un composant de déplacement physique personnalisé sur mesure.</li>
+                <li>Contournement de la physique de base d'Unreal Engine pour supprimer la gitter réseau et garantir un comportement 100% maîtrisé.</li>
+            </ul>
+        </article>
+
+        <!-- BLOC 4 -->
+        <article class="tech-card">
+            <h3>4. Outil de Debug In-Game (Slate UI)</h3>
+            <img src="assets/dawnfinders-slate.png" alt="Debug Window Slate">
+            <ul>
+                <li>Création d'une fenêtre de debugging intégrée en <strong>Slate/SlateUI</strong>.</li>
+                <li>Lancement/relance de sessions à chaud, gestion des respawns et téléportation.</li>
+                <li>Spawner d'objets répliqué à la volée pour faciliter l'équilibrage lors des playtests.</li>
+            </ul>
+        </article>
+
+        <!-- BLOC 5 -->
+        <article class="tech-card" style="grid-column: 1 / -1;">
+            <h3>5. Tooling Externe & Pipeline de Build (C# WPF)</h3>
+            <img src="assets/dawnfinders-launcher.png" alt="Launcher and Deploy Tool" style="max-height: 350px; object-fit: contain;">
+            <ul>
+                <li><strong>Build Deployer :</strong> Outil C# WPF permettant de compiler, générer un <code>manifest.json</code> et téléverser automatiquement la build sur le serveur de test.</li>
+                <li><strong>Custom Launcher :</strong> Compare les manifests et ne télécharge que les fichiers modifiés pour des mises à jour légères et rapides avant chaque playtest.</li>
+            </ul>
+        </article>
+
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
