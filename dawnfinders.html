@@ -15,79 +15,100 @@
     </div>
     <nav class="nav-links">
         <a href="index.html">← Retour à l'accueil</a>
+        <a href="assets/CV_TonNom.pdf" target="_blank" download>CV (PDF)</a>
     </nav>
 </header>
 
 <main>
+    <!-- 1. PRÉSENTATION DU PROJET -->
     <section class="detail-hero">
         <h1>The Dawnfinders</h1>
         <div class="tags">
             <span class="tag tag-ue5">Unreal Engine 5</span>
             <span class="tag tag-cpp">C++</span>
-            <span class="tag tag-network">RPC & Replication</span>
-            <span class="tag tag-tools">Slate UI</span>
-            <span class="tag tag-tools">C# WPF</span>
+            <span class="tag tag-network">Multijoueur / Steam Subsystem</span>
+            <span class="tag tag-tools">Tooling C# / Slate UI</span>
         </div>
         <p style="color: var(--text-muted); margin-top: 15px;">
-            <strong>Rôle :</strong> Lead Programmer / Gameplay & Network Developer<br>
-            Dungeon Crawler d'extraction PvE coopératif. Voici le détail des systèmes clés que j'ai conçus et développés pour ce projet.
+            <strong>Rôle :</strong> Gameplay Programmer & Tooling Engineer (Projet de fin d'études)<br>
+            <strong>Genre :</strong> Jeu d'action / Co-op multijoueur en vue du dessus<br>
+            Développement de l'architecture réseau C++, du système d'interaction modulaire, du composant de déplacement physique du palanquin et de la suite d'outils internes (Slate UI & Launcher C#).
         </p>
     </section>
 
-    <h2 class="section-title">Architecture & Fonctionnalités Clés</h2>
+    <!-- 2. TRAILER / APERÇU GAMEPLAY -->
+    <section class="trailer-section" style="margin: 35px 0;">
+        <h2 class="section-title">Trailer & Aperçu Gameplay</h2>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background-color: #000;">
+            <!-- Option A : YouTube (remplace TON_ID_YOUTUBE) -->
+            <iframe
+                    style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border:0;"
+                    src="https://www.youtube.com/embed/vQHpLTRufTA"
+                    title="The Dawnfinders Teaser"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- 3. GRILLE DE RÉALISATIONS TECHNIQUES -->
+    <h2 class="section-title">Réalisations & Systèmes Clés</h2>
 
     <div class="tech-grid">
 
-        <!-- BLOC 1 -->
+        <!-- BLOC 1 : RESEAU -->
         <article class="tech-card">
             <h3>1. Architecture Réseau & Steam Subsystem</h3>
-            <img src="assets/dawnfinders-network.png" alt="Session Multijoueurs">
+            <img src="assets/Multi.gif" alt="Session Multijoueur">
             <ul>
-                <li>Ré-implémentation du plugin <em>Advanced Sessions</em> via un <strong>GameInstanceSubsystem C++</strong> dédié pour une gestion modulaire.</li>
-                <li>Système complet d'invitation et de création de parties via l'API Steam.</li>
-                <li>Mise en place de la structure RPC de base pour la réplication des états.</li>
+                <li>Ré-implémentation du plugin <em>Advanced Sessions</em> via un <strong>GameInstanceSubsystem C++</strong> dédié.</li>
+                <li>Gestion modulaire de la création et recherche de parties via l'API Steam.</li>
+                <li>Structure RPC optimisée pour la réplication des données.</li>
             </ul>
         </article>
 
-        <!-- BLOC 2 -->
+        <!-- BLOC 2 : INTERACTIONS -->
         <article class="tech-card">
             <h3>2. Système d'Interaction Modulaire</h3>
-            <img src="assets/dawnfinders-network.png" alt="Système d'interaction">
+            <img src="assets/Doors.gif" alt="Système d'interaction répliqué">
             <ul>
-                <li>Conception d'une classe parente d'interaction générique et répliquée.</li>
-                <li>Gestion uniforme pour les éléments du décor (leviers, interrupteurs, palanquin) et entités alliées.</li>
-                <li>Architecture entièrement découplée garantissant l'exécution synchronisée client/serveur.</li>
+                <li>Classe parente d'interaction générique et répliquée sur tous les clients.</li>
+                <li>Architecture découplée s'adaptant aussi bien aux interrupteurs qu'aux entités.</li>
+                <li>Synchronisation serveur/client fluide lors des déclenchements.</li>
             </ul>
         </article>
 
-        <!-- BLOC 3 -->
+        <!-- BLOC 3 : PALANQUIN -->
         <article class="tech-card">
-            <h3>3. Physique Custom (Palanquin)</h3>
-            <img src="assets/dawnfinders-network.png" alt="Palanquin Physique">
+            <h3>3. Physique & Déplacement Custom</h3>
+            <img src="assets/Litter.gif" alt="Déplacement Palanquin">
             <ul>
-                <li>Développement d'un composant de déplacement physique personnalisé sur mesure.</li>
-                <li>Contournement de la physique de base d'Unreal Engine pour supprimer la gitter réseau et garantir un comportement 100% maîtrisé.</li>
+                <li>Composant de déplacement physique sur mesure pour le palanquin.</li>
+                <li>Contournement de la physique de base d'Unreal pour éviter le jitter en réseau.</li>
+                <li>Comportement parfaitement maîtrisé et synchronisé.</li>
             </ul>
         </article>
 
-        <!-- BLOC 4 -->
+        <!-- BLOC 4 : SLATE DEBUG -->
         <article class="tech-card">
             <h3>4. Outil de Debug In-Game (Slate UI)</h3>
-            <img src="assets/dawnfinders-slate.png" alt="Debug Window Slate">
+            <img src="assets/dEBUG.gif" alt="God Window Slate UI">
             <ul>
-                <li>Création d'une fenêtre de debugging intégrée en <strong>Slate/SlateUI</strong>.</li>
-                <li>Lancement/relance de sessions à chaud, gestion des respawns et téléportation.</li>
-                <li>Spawner d'objets répliqué à la volée pour faciliter l'équilibrage lors des playtests.</li>
+                <li>Fenêtre de debug en jeu développée sous <strong>Slate / SlateUI</strong>.</li>
+                <li>Relance de session à chaud, respawn, téléportation instantanée.</li>
+                <li>Spawner d'objets répliqué pour équilibrer les playtests à la volée.</li>
             </ul>
         </article>
 
-        <!-- BLOC 5 -->
+        <!-- BLOC 5 : TOOLING C# -->
         <article class="tech-card" style="grid-column: 1 / -1;">
-            <h3>5. Tooling Externe & Pipeline de Build (C# WPF)</h3>
-            <img src="assets/dawnfinders-launcher.png" alt="Launcher and Deploy Tool" style="max-height: 350px; object-fit: contain;">
+            <h3>5. Pipeline de Build & Launcher dédié (C# WPF)</h3>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; margin: 15px 0;">
+                <img src="assets/Build.gif" alt="Build Deployer C#" style="flex: 1; min-width: 280px; max-height: 300px; object-fit: contain;">
+                <img src="assets/Capture d'écran 2026-03-12 151937.webp" alt="Game Launcher C#" style="flex: 1; min-width: 280px; max-height: 300px; object-fit: contain;">
+            </div>
             <ul>
-                <li><strong>Build Deployer :</strong> Outil C# WPF permettant de compiler, générer un <code>manifest.json</code> et téléverser automatiquement la build sur le serveur de test.</li>
-                <li><strong>Custom Launcher :</strong> Compare les manifests et ne télécharge que les fichiers modifiés pour des mises à jour légères et rapides avant chaque playtest.</li>
+                <li><strong>Build Deployer :</strong> Automatisation de la compilation C++ (RunUAT.bat), génération de <code>manifest.json</code> et déploiement serveur.</li>
+                <li><strong>Custom Launcher :</strong> Vérification de version et téléchargement différentiel des mises à jour pour l'équipe de playtest.</li>
             </ul>
         </article>
 
