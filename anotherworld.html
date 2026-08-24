@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Another World | Détails Techniques</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="brand">
+        <h1><a href="index.html">Alexis DUPIRE</a></h1>
+        <p>Page Projet / Focus Technique</p>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">← Retour à l'accueil</a>
+        <a href="assets/CV_DUPIREAlexis.pdf" target="_blank" download>CV (PDF)</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="banner-section" style="margin: 35px 0;">
+        <div style="width: 100%; max-height: 400px; overflow: hidden; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img src="assets/anotherworld-banner.png" alt="Another World Remake Banner" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+    </section>
+
+    <section class="detail-hero">
+        <h1>Another World (Tech Remake)</h1>
+        <div class="tags">
+            <span class="tag tag-ue5">Unreal Engine / C++</span>
+            <span class="tag tag-cpp">Gameplay Programming</span>
+            <span class="tag tag-network">State Machine</span>
+            <span class="tag tag-tools">Physics & Triggers</span>
+        </div>
+        <p style="color: var(--text-muted); margin-top: 15px;">
+            <strong>Rôle :</strong> Gameplay Programmer (Projet d'études)<br>
+            <strong>Genre :</strong> Action-Aventure / Plateforme cinématique<br>
+            Ré-implémentation C++ des mécaniques clés du jeu culte : controller du personnage, machine à états du joueur, chargeur d'arme à trois niveaux, système de déclencheurs cinématiques et puzzles environnementaux.
+        </p>
+    </section>
+
+    <h2 class="section-title">Réalisations & Systèmes Clés</h2>
+
+    <div class="tech-grid">
+
+        <article class="tech-card">
+            <h3>1. Controller & Machine à États C++</h3>
+            <img src="assets/another-shot.gif" alt="Déplacement et Machine à États">
+            <ul>
+                <li>Machine à états finis (FSM) C++ pour le contrôle précis du personnage (Course, Saut, Roulade, Tir).</li>
+                <li>Inertie et collisions sur mesure pour reproduire la sensation de gameplay cinématique original.</li>
+                <li>Verrouillage dynamique des entrées joueur lors des transitions d'animations.</li>
+            </ul>
+        </article>
+
+        <article class="tech-card">
+            <h3>2. Système d'Arme & Bouclier d'Énergie</h3>
+            <img src="assets/another-chargedshot.png" alt="Mécanique d'arme à charge">
+            <ul>
+                <li>Logique de tir à charge progressive : tir standard, barrière de protection et super-tir perforant.</li>
+                <li>Gestion des champs de force destructibles et calcul d'impacts personnalisés.</li>
+                <li>Architecture C++ modulaire pour l'instanciation des tirs et projectiles.</li>
+            </ul>
+        </article>
+
+        <article class="tech-card">
+            <h3>3. Déclencheurs & Scripting Événementiel</h3>
+            <img src="assets/another-intearctshot.gif" alt="Triggers et Événements">
+            <ul>
+                <li>Gestion d'interactions environnementales soumises à des pré-conditions (tir à l'arme, séquence d'actions, temporisation).</li>
+                <li>Déclenchement d'événements physiques et cinématiques (ex: destruction de câbles par tir pour impacter le décor).</li>
+                <li>Architecture C++ événementielle modulaire permettant de lier triggers, entités et tirs sans couplage fort.</li>
+            </ul>
+        </article>
+
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

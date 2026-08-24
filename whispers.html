@@ -43,7 +43,22 @@
         <!-- BLOC 1 -->
         <article class="tech-card">
             <h3>1. Système de Logique Narrative & Dialogue</h3>
-            <img src="assets/whispers-banner.jpg" alt="Système de dialogue">
+
+            <div class="carousel-container" data-interval="3500">
+                <button class="carousel-arrow prev" aria-label="Image précédente">❮</button>
+                <button class="carousel-arrow next" aria-label="Image suivante">❯</button>
+
+                <div class="carousel-slides">
+                    <img src="assets/whispers-choices.jpg" alt="Choix de dialogue 1" class="carousel-slide active">
+                    <img src="assets/whisper-day.jpg" alt="Choix de dialogue 2" class="carousel-slide">
+                </div>
+
+                <!-- Puces de navigation visuelles -->
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
             <ul>
                 <li>Conception d'un arbre de dialogue dynamique gérant les choix narratifs et l'impact sur le destin des PNJ.</li>
                 <li>Gestion des états du jeu (Game State) interconnectée avec la progression des conversations.</li>
@@ -52,31 +67,23 @@
 
         <!-- BLOC 2 -->
         <article class="tech-card">
-            <h3>2. Mécaniques d'Interaction Gameplay</h3>
-            <img src="assets/whispers-banner.jpg" alt="Gameplay tasses de thé">
-            <ul>
-                <li>Implémentation des mécaniques de manipulation d'objets 3D pour la divination (lecture au fond des tasses).</li>
-                <li>Rendu visuel custom et gestion précise des collisions/détections pour les minijeux interactifs.</li>
-            </ul>
-        </article>
-
-        <!-- BLOC 3 -->
-        <article class="tech-card">
             <h3>3. Ambiance Visuelle & Shaders</h3>
-            <img src="assets/whispers-banner.jpg" alt="Ambiance visuelle">
+            <div class="image-slider" style="--position: 50%;">
+                <div class="image-container">
+                    <!-- Image du dessous (ex: Conséquence du choix / Nuit / État B) -->
+                    <img src="assets/whisper-day.jpg" alt="Conséquence du choix" class="img-after">
+
+                    <!-- Image du dessus (ex: Interface de choix / Jour / État A) -->
+                    <img src="assets/whisper-night.jpg" alt="Système de dialogue" class="img-before">
+                </div>
+
+                <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Comparateur d'images">
+                <div class="slider-line"></div>
+                <div class="slider-handle">↔</div>
+            </div>
             <ul>
                 <li>Mise en place de matériaux stylisés et de post-process shaders pour renforcer l'atmosphère mystique.</li>
                 <li>Gestion de l'éclairage dynamique pour accompagner les phases clés de la narration.</li>
-            </ul>
-        </article>
-
-        <!-- BLOC 4 -->
-        <article class="tech-card">
-            <h3>4. Intégration Steam & Publication</h3>
-            <img src="assets/whispers-banner.jpg" alt="Steam Integration">
-            <ul>
-                <li>Préparation et packaging des builds Unreal Engine 5 pour la mise en ligne.</li>
-                <li>Intégration du SDK Steam (Achievements, Steam Cloud, configuration du store).</li>
             </ul>
         </article>
 
